@@ -1,5 +1,8 @@
 node_modules/
 client/build
+
+server/.env
+
 .env
 .env.*
 .env-cmdrc
