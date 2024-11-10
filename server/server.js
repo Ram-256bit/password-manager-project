@@ -13,7 +13,8 @@ const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
+//app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
+app.use(cors())
 
 mongoose.set("strictQuery", false);
 //mongoose.connect("mongodb://localhost:27017/pm4", { useNewUrlParser: true })
