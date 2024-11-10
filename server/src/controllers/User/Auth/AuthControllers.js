@@ -60,40 +60,23 @@ export const LoginController = (req, res) => {
 //POST /api/user/login
 export const LoginVerifyController = async (req, res) => {
     try {
-        //console.log(req);
-        console.log("===Password"+req.body.password);
         const user = await User.findOne({ emailId: req.body.emailId })
         if (!user) {
             return res.status(201).json({ success: false, msg: "could not find user" });
         }
-        
-        console.log("===User==="+user);
-        console.log("===emailId==="+user.emailId);
-        console.log("===Req body password==="+req.body.password);
-        //console.log("user.password))
-
-
+       
         const isValid = await bcrypt.compare(req.body.password, user.password)
-        console.log("===isValid==="+isValid);
 
         if (isValid && user) {
-            console.log("1");
             if (user.two_fa_status === false) {
-            console.log("2");
-            console.log(user.uname);
                 const tokenObject = await issueJWT(user.uname); //from utils
-            console.log("7");
                 res.status(202).json({ success: true, token: tokenObject.token, expiresIn: tokenObject.expires, totpStatus: user.two_fa_status, superUser: user.uname });
-            console.log("8");
             }
             else {
-            console.log("3");
                 res.status(200).json({ success: "partial", msg: "Token will be generated once the totp step is completed", totpStatus: true, superUser: user.uname })
             }
-            console.log("4");
 
         } else {
-            console.log("5");
             res.status(200).json({ success: false, msg: "you entered the wrong password" });
         }
     }
