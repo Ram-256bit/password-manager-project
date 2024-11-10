@@ -14,6 +14,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
 //app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
+app.use(cors({ origin: "https://pm4.netlify.app", credentials: true }));
 //app.use(cors())
  app.use(cors({ origin: '*' }));
 
