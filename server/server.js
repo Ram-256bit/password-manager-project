@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 //app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
 app.use(cors({ origin: "https://pm4.netlify.app", credentials: true }));
 //app.use(cors())
- app.use(cors({ origin: '*' }));
+ //app.use(cors({ origin: '*' }));
 
 mongoose.set("strictQuery", false);
 //mongoose.connect("mongodb://localhost:27017/pm4", { useNewUrlParser: true })
