@@ -18,6 +18,8 @@ app.use(cors({ origin: "https://pm4.netlify.app", credentials: true }));
 //app.use(cors())
  //app.use(cors({ origin: '*' }));
 
+app.options('*', cors({ origin: "https://pm4.netlify.app", credentials: true }));
+
 mongoose.set("strictQuery", false);
 //mongoose.connect("mongodb://localhost:27017/pm4", { useNewUrlParser: true })
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true })
