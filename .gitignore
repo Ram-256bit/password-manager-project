@@ -1,7 +1,8 @@
 node_modules/
 client/build
+dist/
 # .env
-.env.*
+# .env.*
 .env-cmdrc
 *.ps1
 *.pem

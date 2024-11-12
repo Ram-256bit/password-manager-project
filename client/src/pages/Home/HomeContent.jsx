@@ -11,7 +11,7 @@ const HomeContent = () => {
           <p>A simple password manager with enterprise features</p>
           <button>
             <a
-              href="https://github.com/Mohit-3430/CredPass"
+              href=""
               target={"_blank"}
               rel="noreferrer"
             >

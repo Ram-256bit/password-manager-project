@@ -15,7 +15,7 @@ export const resetPasswordEmail = async (req, res) => {
             res.status(404).json({ success: false, msg: "User not Found!!" })
         else {
             const url = passwordResetLink(emailId);
-            const subject = "Password reset from CredPass"
+            const subject = "Password reset from SafePass"
             const type = "Password Reset"
             const usr = user.uname;
             sendMail(emailId, subject, url, type, usr)

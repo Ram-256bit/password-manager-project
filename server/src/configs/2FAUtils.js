@@ -3,6 +3,7 @@ import speakeasy from "speakeasy"
 export const genSecret = (user) => {
     let secret = speakeasy.generateSecret({
         name: `CredPass-${user}`,
+        //name: `SafePass-${user}`,
         length: 16
     })
 

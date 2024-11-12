@@ -241,8 +241,8 @@ const Record = ({
           <div>
             <img
               className="record__favicon"
-              src={`${import.meta.env.VITE_FAVICON_URL}/${site.siteUrl}/`}
-              alt="No Favicon"
+              src={`${import.meta.env.VITE_FAVICON_URL}/${site.siteUrl}`}
+              alt=""
             />
           </div>
           <div>

@@ -34,7 +34,7 @@ export const SignupAuthController = async (req, res) => {
     try {
         if (req.body.password === req.body.againPassword) {
             const user = await User.create({ emailId, password, uname });
-            const subject = "Welcome to CredPass!!"
+            const subject = "Welcome to SafePass!!"
             sendMail(emailId, subject, " ", "Welcome", uname)
             res.status(201).json({ success: true, user: user })
         }

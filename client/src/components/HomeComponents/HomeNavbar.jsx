@@ -21,7 +21,7 @@ const HomeNavbar = () => {
     <>
       <nav className="nav">
         <div className="nav__links nav__brand">
-          <Link to="/">CredPass</Link>
+          <Link to="/">SafePass</Link>
           <span onClick={() => toggleNav()}>
             {bars === true ? <FaBars /> : <FaTimes />}
           </span>
